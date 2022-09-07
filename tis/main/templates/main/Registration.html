@@ -1,0 +1,77 @@
+{% extends 'main/base.html' %}
+
+{% block title%}
+Авторизация
+{% endblock %}
+
+{% block content %}
+  <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Регистрация</h4>
+        <form class="needs-validation" novalidate="" method="post">
+          {% csrf_token %}
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="user_surname" class="form-label">Фамилия</label>
+                {{ register.surname }}
+              <div class="invalid-feedback">
+                Valid user_surname is required.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="user_name" class="form-label">Имя</label>
+                {{ register.name }}
+              <div class="invalid-feedback">
+                Valid user_name is required.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="user_patronymic" class="form-label">Отчество</label>
+                {{ register.patronymic }}
+              <div class="invalid-feedback">
+                Valid user_patronymic is required.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">E-mail</label>
+                {{ register.mail }}
+              <div class="invalid-feedback">
+                Please enter a valid email address for shipping updates.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="school" class="form-label">Полное название образовательного учреждения</label>
+                {{ register.school }}
+              <div class="invalid-feedback">
+                Please enter your shipping address.
+              </div>
+            </div>
+
+            <div class="col-md-5">
+              <label for="class" class="form-label">Класс</label>
+              {{ register.number }}
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <label for="letter" class="form-label">Буква</label>
+                {{ register.letter }}
+              <div class="invalid-feedback">
+                Please provide a valid state.
+              </div>
+            </div>
+
+          <div class="form-check">
+              {{ register.certificate }}
+            <label class="form-check-label" for="send_ser">Выслать сертефикат на электронную почту</label>
+          </div>
+          <span>{{ error }}</span>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Начать тестирование</button>
+        </form>
+  </div>
+{% endblock %}

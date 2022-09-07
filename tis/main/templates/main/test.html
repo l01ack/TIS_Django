@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Тестирование
+{% endblock %}
+
+{% block content %}
+<h1>Тестирование</h1>
+{% if tasks_1 %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_1 }}</h3>
+            <h3>{{ answer.answer_1 }}</h3>
+        </div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_2 }}</h3>
+            <h3>{{ answer.answer_2 }}</h3>
+        </div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_3 }}</h3>
+            <h3>{{ answer.answer_3 }}</h3>
+        </div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_4 }}</h3>
+            <h3>{{ answer.answer_4 }}</h3>
+        </div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_5 }}</h3>
+            <h3>{{ answer.answer_5 }}</h3>
+        </div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_6 }}</h3>
+            <h3>{{ answer.answer_6 }}</h3>
+        </div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_7 }}</h3>
+            <h3>{{ answer.answer_7 }}</h3>
+        </div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_8 }}</h3>
+            <h3>{{ answer.answer_8 }}</h3>
+        </div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_9 }}</h3>
+            <h3>{{ answer.answer_9 }}</h3>
+        </div>
+        <div class="alert alert-warning mt-2">
+            <h3>{{ tasks_10 }}</h3>
+            <h3>{{ answer.answer_10 }}</h3>
+        <button type="submit">Закончить тестирование</button>
+        <span>{{ error }}</span>
+        </div>
+    </form>
+
+{% else %}
+    <p>У нас нет задач!</p>
+{% endif %}
+
+{% endblock %}
